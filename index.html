@@ -1,11 +1,779 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ex1</title>
+    <title>Guia Completo de Tags HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .tag-info {
+            background-color: #f7fafc;
+        }
+        .tag-block {
+            background-color: #e2e8f0;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
 </head>
-<body>
-    <h1> <p> Hello orld! </p></h1>
+<body class="bg-gray-100 text-gray-800 p-8">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-8 space-y-12">
+        <header class="text-center">
+            <h1 class="text-5xl font-extrabold text-blue-600 mb-2">Guia Completo de Tags HTML</h1>
+            <p class="text-lg text-gray-600">Um guia exaustivo para as tags mais importantes e usadas do HTML5.</p>
+        </header>
+
+        <!-- Dica rápida -->
+        <div class="bg-blue-500 text-white rounded-lg p-4 shadow-md">
+            <p class="font-bold">Observação:</p>
+            <p class="text-sm mt-1">Para envelopar uma tag em um componente já criado no VS Code, selecione os elementos, pressione <span class="font-mono bg-blue-600 text-white px-1 py-0.5 rounded-sm">Control + Shift + P</span>, digite <span class="font-mono bg-blue-600 text-white px-1 py-0.5 rounded-sm">Wrap with Abbreviation</span> e, em seguida, escreva a tag desejada.</p>
+        </div>
+
+        <!-- Seção 1: Estrutura Base do Documento -->
+        <section class="space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-3xl font-bold text-gray-700">1. Estrutura Base do Documento</h2>
+                <p class="text-gray-500 mt-1">Essas tags formam o esqueleto de qualquer página web.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;!DOCTYPE html&gt;</h3>
+                    <p class="text-sm text-gray-600">É a primeira linha de código e informa ao navegador que o documento é um arquivo HTML5.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;!DOCTYPE html&gt;</pre>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;html&gt;</h3>
+                    <p class="text-sm text-gray-600">É o elemento raiz, ou seja, o contêiner principal que engloba toda a página.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;html&gt;&lt;/html&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;head&gt;</h3>
+                    <p class="text-sm text-gray-600">Uma seção que contém metadados (informações sobre a página) que não são visíveis para o usuário. Aqui, você define o título, a codificação de caracteres, links para arquivos CSS e JavaScript, etc.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;head&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;meta charset="UTF-8"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;title&gt;Meu Portfólio de Fotografia&lt;/title&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;link rel="stylesheet" href="estilos.css"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/head&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;body&gt;</h3>
+                    <p class="text-sm text-gray-600">Contém todo o conteúdo visível da página, como títulos, parágrafos, imagens, links e vídeos.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;body&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;h1&gt;Bem-vindo ao meu Portfólio!&lt;/h1&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;p&gt;Confira minhas melhores fotos na galeria abaixo.&lt;/p&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/body&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-200 my-12">
+
+        <!-- Seção 2: Estrutura Semântica e Seções -->
+        <section class="space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-3xl font-bold text-gray-700">2. Estrutura Semântica e Seções</h2>
+                <p class="text-gray-500 mt-1">Essas tags organizam o conteúdo de uma forma que faz sentido não só para você, mas também para os navegadores e para leitores de tela usados por pessoas com deficiência visual.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;header&gt;</h3>
+                    <p class="text-sm text-gray-600">Representa o cabeçalho de uma seção ou da página, geralmente contendo o título principal, o logo do site e a navegação.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;header&gt;...&lt;/header&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;nav&gt;</h3>
+                    <p class="text-sm text-gray-600">Define uma seção que contém links de navegação.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;nav&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;ul&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">    &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">    &lt;li&gt;&lt;a href="#servicos"&gt;Serviços&lt;/a&gt;&lt;/li&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">    &lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;/ul&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/nav&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;main&gt;</h3>
+                    <p class="text-sm text-gray-600">Representa o conteúdo principal e único de uma página. Deve haver apenas uma tag &lt;main&gt; por documento.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;main&gt;...&lt;/main&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;article&gt;</h3>
+                    <p class="text-sm text-gray-600">Define um conteúdo independente e autocontido, como um post de blog, uma notícia ou um comentário. Um &lt;article&gt; pode ser republicado em outros sites sem perder o sentido.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;article&gt;...&lt;/article&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;section&gt;</h3>
+                    <p class="text-sm text-gray-600">Representa uma seção genérica de conteúdo em um documento. É usada para agrupar conteúdos relacionados.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;section&gt;...&lt;/section&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;aside&gt;</h3>
+                    <p class="text-sm text-gray-600">Representa um conteúdo que é relacionado, mas separado, como uma barra lateral, uma caixa de curiosidades ou uma lista de links relacionados.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;aside&gt;...&lt;/aside&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;footer&gt;</h3>
+                    <p class="text-sm text-gray-600">Representa o rodapé de uma seção ou da página, contendo informações como direitos autorais, links para redes sociais e informações de contato.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;footer&gt;...&lt;/footer&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;figure&gt; e &lt;figcaption&gt;</h3>
+                    <p class="text-sm text-gray-600">A tag &lt;figure&gt; é usada para agrupar conteúdo autocontido (geralmente uma imagem, um diagrama ou um gráfico) e a tag &lt;figcaption&gt; fornece uma legenda para ele.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;figure&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;img src="grafico-vendas.png" alt="Gráfico de Vendas"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;figcaption&gt;Gráfico mostrando o aumento de vendas.&lt;/figcaption&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/figure&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-200 my-12">
+
+        <!-- Seção 3: Conteúdo em Linha e Formatação de Texto -->
+        <section class="space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-3xl font-bold text-gray-700">3. Conteúdo em Linha e Formatação de Texto</h2>
+                <p class="text-gray-500 mt-1">Essas tags são usadas para formatar o texto e dar significado a ele.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;h1&gt; a &lt;h6&gt;</h3>
+                    <p class="text-sm text-gray-600">Representam títulos de diferentes níveis de importância. &lt;h1&gt; é o título principal da página, e os outros servem para subtítulos.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;h1&gt;Título principal&lt;/h1&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;h2&gt;Subtítulo de uma seção&lt;/h2&gt;</pre>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;p&gt;</h3>
+                    <p class="text-sm text-gray-600">Define um parágrafo de texto.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;Este é um parágrafo de texto.&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;strong&gt; e &lt;b&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;strong&gt; indica forte importância (semântica). &lt;b&gt; é apenas para dar um destaque visual em negrito, sem adicionar importância.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;&lt;strong&gt;Atenção:&lt;/strong&gt; Este é um aviso importante.&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;em&gt; e &lt;i&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;em&gt; enfatiza um texto (semântica). &lt;i&gt; é para um texto em itálico com uma conotação diferente da ênfase (ex: um termo técnico ou um nome de livro).</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;O prazo de entrega é de &lt;em&gt;dois dias úteis&lt;/em&gt;.&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;span&gt; e &lt;div&gt;</h3>
+                    <p class="text-sm text-gray-600">Ambos são contêineres genéricos. &lt;span&gt; é em linha (não quebra a linha) e &lt;div&gt; é um bloco (cria uma nova linha). Eles são usados para agrupar elementos e aplicar estilos.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;div&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;p&gt;Seção de Clientes com &lt;span class="text-red-500"&gt;desconto&lt;/span&gt;.&lt;/p&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/div&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;pre&gt;</h3>
+                    <p class="text-sm text-gray-600">Formata o texto de forma pré-formatada, preservando os espaços e quebras de linha que foram escritos no código.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">
+&lt;pre&gt;
+  Função:
+    if (condicao) {
+      return true;
+    }
+&lt;/pre&gt;</pre>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;blockquote&gt; e &lt;q&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;blockquote&gt; para citações longas. &lt;q&gt; para citações curtas.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;blockquote&gt;"A persistência é o caminho do êxito."&lt;/blockquote&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">Ele disse: &lt;q&gt;olá&lt;/q&gt;.</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;br&gt; e &lt;hr&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;br&gt; causa uma quebra de linha. &lt;hr&gt; cria uma linha horizontal.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">Texto aqui&lt;br&gt;e mais texto.&lt;hr&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;sub&gt; e &lt;sup&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;sub&gt; (subscrito) para texto abaixo. &lt;sup&gt; (sobrescrito) para texto acima.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">H&lt;sub&gt;2&lt;/sub&gt;O e 20&lt;sup&gt;3&lt;/sup&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;del&gt; e &lt;ins&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;del&gt; indica texto riscado (deletado). &lt;ins&gt; indica texto sublinhado (inserido).</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">Preço: &lt;del&gt;R$50&lt;/del&gt; &lt;ins&gt;R$40&lt;/ins&gt;</pre>
+                </div>
+            </div>
+            
+        </section>
+
+        <hr class="border-t-2 border-gray-200 my-12">
+
+        <!-- Seção 4: Links, Listas e Tabelas -->
+        <section class="space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-3xl font-bold text-gray-700">4. Links, Listas e Tabelas</h2>
+                <p class="text-gray-500 mt-1">Essas tags são essenciais para organizar o conteúdo de forma hierárquica e interligada.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;a&gt;</h3>
+                    <p class="text-sm text-gray-600">Cria um link que direciona o usuário para outra página web, um arquivo para download ou uma seção específica dentro da mesma página.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;a href="https://google.com" target="_blank" rel="external"&gt;Acessar o Google&lt;/a&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;a href="/downloads/arquivo.pdf" download="nome-do-arquivo"&gt;Baixar PDF&lt;/a&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;ul&gt;, &lt;ol&gt; e &lt;li&gt;</h3>
+                    <p class="text-sm text-gray-600">A tag &lt;ul&gt; cria uma lista não ordenada (com marcadores), &lt;ol&gt; cria uma lista ordenada (numerada) e &lt;li&gt; é um item de lista.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;h3&gt;Ingredientes&lt;/h3&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;ul&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;li&gt;Café&lt;/li&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/ul&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;h3&gt;Modo de Preparo&lt;/h3&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;ol&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;li&gt;Pré-aqueça o forno.&lt;/li&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/ol&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;table&gt; e relacionados</h3>
+                    <p class="text-sm text-gray-600">Estruturas para criar tabelas com cabeçalho (&lt;thead&gt;), corpo (&lt;tbody&gt;), rodapé (&lt;tfoot&gt;), linhas (&lt;tr&gt;), e células de cabeçalho (&lt;th&gt;) e de dados (&lt;td&gt;).</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;table&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Produto&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Café&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/table&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;caption&gt;, &lt;colgroup&gt;, &lt;col&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;caption&gt; adiciona legenda à tabela. &lt;colgroup&gt; e &lt;col&gt; estilizam colunas.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;table&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;caption&gt;Tabela de Preços&lt;/caption&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;colgroup&gt;&lt;col span="2" style="background-color:gray"&gt;&lt;/colgroup&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/table&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-200 my-12">
+
+        <!-- Seção 5: Formulários e Interatividade -->
+        <section class="space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-3xl font-bold text-gray-700">5. Formulários e Interatividade</h2>
+                <p class="text-gray-500 mt-1">Essas tags permitem que os usuários interajam com a página, enviando dados para um servidor.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;form&gt;</h3>
+                    <p class="text-sm text-gray-600">Agrupa todos os elementos de um formulário (campos de texto, botões, etc.) para que os dados sejam enviados juntos.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;form action="/enviar-contato" method="post"&gt;&lt;/form&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;label&gt; e &lt;input&gt;</h3>
+                    <p class="text-sm text-gray-600">Define um rótulo para um campo de formulário e cria um campo de entrada de dados, com vários tipos (text, email, password, etc.).</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;label for="email"&gt;Seu E-mail:&lt;/label&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;input type="email" id="email" name="email"&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;button&gt;</h3>
+                    <p class="text-sm text-gray-600">Cria um botão clicável.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;button type="submit"&gt;Enviar Mensagem&lt;/button&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;textarea&gt;</h3>
+                    <p class="text-sm text-gray-600">Define uma área de texto multi-linha, ideal para mensagens longas ou comentários.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;textarea id="mensagem" rows="4"&gt;&lt;/textarea&gt;</pre>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;select&gt; e &lt;option&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;select&gt; cria uma lista suspensa (dropdown) e &lt;option&gt; define as opções que o usuário pode escolher.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;select id="pais"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;option value="br"&gt;Brasil&lt;/option&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/select&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;fieldset&gt; e &lt;legend&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;fieldset&gt; agrupa elementos de um formulário. &lt;legend&gt; define a legenda.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;fieldset&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;legend&gt;Contato&lt;/legend&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/fieldset&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;datalist&gt;</h3>
+                    <p class="text-sm text-gray-600">Cria uma lista de opções para um campo de input.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;input list="browsers"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;datalist id="browsers"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;option value="Chrome"&gt;&lt;/option&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;option value="Firefox"&gt;&lt;/option&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/datalist&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-200 my-12">
+
+        <!-- Seção 6: Multimídia e Canvas -->
+        <section class="space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-3xl font-bold text-gray-700">6. Multimídia e Canvas</h2>
+                <p class="text-gray-500 mt-1">Essas tags permitem que você adicione imagens, vídeos, áudios e gráficos à sua página, tornando-a mais rica e interativa.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;img&gt;</h3>
+                    <p class="text-sm text-gray-600">Incorpora uma imagem em seu documento HTML.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;img src="foto.jpg" alt="Minha foto"&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;video&gt; e &lt;audio&gt;</h3>
+                    <p class="text-sm text-gray-600">Incorpora vídeo e áudio.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;video controls width="500" height="300" poster="thumbnail.jpg"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;source src="video.mp4" type="video/mp4"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;source src="video.webm" type="video/webm"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  Seu navegador não suporta a tag de vídeo.</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/video&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;audio src="musica.mp3" controls loop&gt;&lt;/audio&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;source&gt;</h3>
+                    <p class="text-sm text-gray-600">Define a fonte de um arquivo de mídia para &lt;video&gt; ou &lt;audio&gt;.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;video controls&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;source src="video.mp4" type="video/mp4"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  Seu navegador não suporta vídeos.</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/video&gt;</pre>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;picture&gt;</h3>
+                    <p class="text-sm text-gray-600">Permite exibir imagens diferentes para diferentes tamanhos de tela.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;picture&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;source srcset="imagem-mobile.jpg" media="(max-width: 600px)" /&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;img src="imagem-desktop.jpg" alt="Descrição da imagem" /&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/picture&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;canvas&gt;</h3>
+                    <p class="text-sm text-gray-600">Uma "tela" para desenhar gráficos e animações com JavaScript.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;canvas id="meuGrafico"&gt;&lt;/canvas&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;svg&gt;</h3>
+                    <p class="text-sm text-gray-600">Usado para criar gráficos vetoriais.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;svg width="100" height="100"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;circle cx="50" cy="50" r="40" stroke="black" fill="red" /&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/svg&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-200 my-12">
+
+        <!-- Seção 7: Tags de Interatividade e Conteúdo Dinâmico -->
+        <section class="space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-3xl font-bold text-gray-700">7. Tags de Interatividade e Conteúdo Dinâmico</h2>
+                <p class="text-gray-500 mt-1">Essas tags trazem recursos de interface mais avançados, que eram feitos antes com JavaScript, mas agora têm suporte nativo no HTML.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;dialog&gt;</h3>
+                    <p class="text-sm text-gray-600">Usado para criar janelas de diálogo, pop-ups ou modais. É a forma semântica e acessível de criar esses elementos.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;button onclick="modal.showModal()"&gt;Abrir&lt;/button&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;dialog id="modal"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;p&gt;Conteúdo do modal.&lt;/p&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/dialog&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;details&gt; e &lt;summary&gt;</h3>
+                    <p class="text-sm text-gray-600">Cria um widget de divulgação onde o usuário pode abrir ou fechar o conteúdo, e &lt;summary&gt; define o título que fica sempre visível.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;details&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;summary&gt;O que é HTML?&lt;/summary&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;p&gt;Linguagem de Marcação de Hipertexto.&lt;/p&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/details&gt;</pre>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;template&gt; e &lt;slot&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;template&gt; armazena código HTML que pode ser usado com JavaScript. &lt;slot&gt; é um placeholder para injeção de HTML em componentes.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm flex items-center justify-center">
+                    <pre class="text-sm font-mono text-gray-800">&lt;template id="card-template"&gt;...&lt;/template&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;output&gt;</h3>
+                    <p class="text-sm text-gray-600">Usado para exibir o resultado de um cálculo ou ação do usuário.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;form oninput="total.value=parseInt(a.value)+parseInt(b.value)"&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;input type="number" id="a"&gt; + &lt;input type="number" id="b"&gt; = &lt;output name="total"&gt;&lt;/output&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/form&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;progress&gt; e &lt;meter&gt;</h3>
+                    <p class="text-sm text-gray-600">&lt;progress&gt; exibe o progresso de uma tarefa. &lt;meter&gt; representa um valor em um intervalo.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;meter value="0.75"&gt;&lt;/meter&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-200 my-12">
+
+        <!-- Seção 8: Tags de Script e Estilo -->
+        <section class="space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-3xl font-bold text-gray-700">8. Tags de Script e Estilo</h2>
+                <p class="text-gray-500 mt-1">Essas tags são usadas para ligar o HTML ao JavaScript e ao CSS.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;script&gt;</h3>
+                    <p class="text-sm text-gray-600">Usado para incorporar código JavaScript.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p id="paragrafo"&gt;Clique para mudar o texto.&lt;/p&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;script&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  document.getElementById("paragrafo").onclick = function() {</pre>
+                    <pre class="text-sm font-mono text-gray-800">    this.innerHTML = "O texto mudou!";</pre>
+                    <pre class="text-sm font-mono text-gray-800">  };</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/script&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;style&gt;</h3>
+                    <p class="text-sm text-gray-600">Adiciona código CSS diretamente no documento.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;style&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  button {</pre>
+                    <pre class="text-sm font-mono text-gray-800">    background-color: blue;</pre>
+                    <pre class="text-sm font-mono text-gray-800">    color: white;</pre>
+                    <pre class="text-sm font-mono text-gray-800">    padding: 10px 20px;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  }</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/style&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;button&gt;Botão Estilizado&lt;/button&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-200 my-12">
+
+        <!-- Seção 9: Outras Tags e Atributos -->
+        <section class="space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-3xl font-bold text-gray-700">9. Outras Tags e Atributos</h2>
+                <p class="text-gray-500 mt-1">Tags e atributos menos comuns, mas ainda válidos e úteis.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;wbr&gt;</h3>
+                    <p class="text-sm text-gray-600">Quebra uma palavra longa se necessário.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;A url do site é: http://exemplo&lt;wbr&gt;de-site-muito-longo.com&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;bdo&gt;</h3>
+                    <p class="text-sm text-gray-600">Sobrescreve a direção do texto.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;&lt;bdo dir="rtl"&gt;Este texto vai da direita para a esquerda.&lt;/bdo&gt;&lt;/p&gt;</pre>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;cite&gt;</h3>
+                    <p class="text-sm text-gray-600">Define o título de um trabalho.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;O livro &lt;cite&gt;O Senhor dos Anéis&lt;/cite&gt; foi escrito por J.R.R. Tolkien.&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;mark&gt;</h3>
+                    <p class="text-sm text-gray-600">Marca ou destaca um texto.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;A resposta correta é: &lt;mark&gt;HTML&lt;/mark&gt;.&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;u&gt;</h3>
+                    <p class="text-sm text-gray-600">Sublinha o texto.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;&lt;u&gt;Sublinhado&lt;/u&gt;.&lt;/p&gt;</pre>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;code&gt;</h3>
+                    <p class="text-sm text-gray-600">Exibe código em linha.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;Para exibir uma mensagem, use o comando &lt;code&gt;alert()&lt;/code&gt;.&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;time&gt;</h3>
+                    <p class="text-sm text-gray-600">Representa uma data e/ou hora.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;O evento começa em &lt;time datetime="2025-10-12T19:00"&gt;12 de Outubro, às 19:00h&lt;/time&gt;.&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;s&gt;</h3>
+                    <p class="text-sm text-gray-600">Indica que o conteúdo não é mais relevante.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;Preço antigo: &lt;s&gt;R$50&lt;/s&gt;.&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;small&gt;</h3>
+                    <p class="text-sm text-gray-600">Representa texto de menor importância.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;Este é o conteúdo principal. &lt;small&gt;Aviso legal: todos os direitos reservados.&lt;/small&gt;&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;dfn&gt;</h3>
+                    <p class="text-sm text-gray-600">Define um termo que será introduzido ou definido.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;&lt;dfn&gt;HTML&lt;/dfn&gt; é a linguagem de marcação para a web.&lt;/p&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>&copy; 2023 Guia de Tags HTML. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
 </body>
 </html>

@@ -170,6 +170,20 @@
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;address&gt;</h3>
+                    <p class="text-sm text-gray-600">Define a informação de contato para o autor/dono de um documento ou artigo.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;address&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;p&gt;Escrito por &lt;a href="mailto:exemplo@email.com"&gt;Fulano de Tal&lt;/a&gt;.&lt;/p&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;p&gt;Visite-nos em:&lt;/p&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;p&gt;Endereço, Cidade, País&lt;/p&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/address&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
                     <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;footer&gt;</h3>
                     <p class="text-sm text-gray-600">Representa o rodapé de uma seção ou da página, contendo informações como direitos autorais, links para redes sociais e informações de contato.</p>
                 </div>
@@ -234,8 +248,18 @@
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;abbr&gt;</h3>
+                    <p class="text-sm text-gray-600">Define uma abreviação ou sigla. O atributo title mostra a descrição completa ao passar o mouse.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;p&gt;A &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; é a base da web.&lt;/p&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
                     <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;em&gt; e &lt;i&gt;</h3>
-                    <p class="text-sm text-gray-600">&lt;em&gt; enfatiza um texto (semântica). &lt;i&gt; é para um texto em itálico com uma conotação diferente da ênfase (ex: um termo técnico ou um nome de livro).</p>
+                    <p class="text-sm text-gray-600">&lt;em&gt; enfatiza o texto (semântica). &lt;i&gt; é para itálico visual.</p>
                 </div>
                 <div class="tag-block rounded-lg p-4 shadow-sm">
                     <pre class="text-sm font-mono text-gray-800">&lt;p&gt;O prazo de entrega é de &lt;em&gt;dois dias úteis&lt;/em&gt;.&lt;/p&gt;</pre>
@@ -359,6 +383,20 @@
                     <pre class="text-sm font-mono text-gray-800">&lt;table&gt;</pre>
                     <pre class="text-sm font-mono text-gray-800">  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Produto&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</pre>
                     <pre class="text-sm font-mono text-gray-800">  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Café&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">&lt;/table&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;tfoot&gt;</h3>
+                    <p class="text-sm text-gray-600">Define o rodapé de uma tabela.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;table&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Preço&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Pão&lt;/td&gt;&lt;td&gt;R$5&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</pre>
+                    <pre class="text-sm font-mono text-gray-800">  &lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Total&lt;/td&gt;&lt;td&gt;R$5&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;</pre>
                     <pre class="text-sm font-mono text-gray-800">&lt;/table&gt;</pre>
                 </div>
             </div>
@@ -510,6 +548,16 @@
                     <pre class="text-sm font-mono text-gray-800">  &lt;source src="video.mp4" type="video/mp4"&gt;</pre>
                     <pre class="text-sm font-mono text-gray-800">  Seu navegador não suporta vídeos.</pre>
                     <pre class="text-sm font-mono text-gray-800">&lt;/video&gt;</pre>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="tag-info rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">&lt;iframe&gt;</h3>
+                    <p class="text-sm text-gray-600">Usada para incorporar outra página HTML dentro da página atual. É ideal para exibir conteúdo de outro site (como um mapa do Google Maps) no seu próprio site.</p>
+                </div>
+                <div class="tag-block rounded-lg p-4 shadow-sm">
+                    <pre class="text-sm font-mono text-gray-800">&lt;iframe src="https://www.google.com/maps" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;</pre>
                 </div>
             </div>
             
